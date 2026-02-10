@@ -137,6 +137,66 @@
             font-size: 20px;
         }
 
+        .add-list-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px 30px;
+            background: linear-gradient(135deg, #6B5B95 0%, #5A4A7F 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 18px;
+            margin: 20px 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(107, 91, 149, 0.3);
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .add-list-banner:hover {
+            background: linear-gradient(135deg, #5A4A7F 0%, #6B5B95 100%);
+            box-shadow: 0 10px 30px rgba(107, 91, 149, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .add-list-banner:active {
+            transform: translateY(-1px);
+        }
+
+        .banner-icon {
+            font-size: 28px;
+            animation: bounce 2s infinite;
+        }
+
+        .banner-text {
+            letter-spacing: 1px;
+        }
+
+        .banner-arrow {
+            font-size: 24px;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .add-list-banner:hover .banner-arrow {
+            transform: translateX(5px);
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
         .category-filter {
             display: flex;
             gap: 12px;
@@ -505,6 +565,248 @@
             font-size: 22px;
         }
 
+        .missing-item-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .missing-item-modal.open {
+            display: flex;
+        }
+
+        .missing-item-box {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            animation: scaleIn 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .missing-item-box h2 {
+            color: var(--text-dark);
+            font-size: 22px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(255, 91, 31, 0.2);
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            background: white;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 20px;
+            padding-right: 40px;
+        }
+
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(255, 91, 31, 0.2);
+        }
+
+        .quantity-type-selector {
+            margin-bottom: 20px;
+        }
+
+        .quantity-type-selector label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .toggle-switch-container {
+            display: flex;
+            gap: 0;
+            background: #F0F0F0;
+            border-radius: 8px;
+            padding: 4px;
+        }
+
+        .toggle-switch {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .toggle-switch input[type="radio"] {
+            display: none;
+        }
+
+        .toggle-slider {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 6px;
+            background: transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        .toggle-label {
+            display: block;
+        }
+
+        .toggle-switch input[type="radio"]:checked + .toggle-slider {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+        }
+
+        .quantity-options {
+            display: flex;
+            gap: 12px;
+        }
+
+        .quantity-option {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 15px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .quantity-option:hover {
+            border-color: var(--primary);
+            background: rgba(255, 91, 31, 0.05);
+        }
+
+        .quantity-option input[type="radio"] {
+            cursor: pointer;
+            accent-color: var(--primary);
+            width: 18px;
+            height: 18px;
+        }
+
+        .quantity-option input[type="radio"]:checked + span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .quantity-option:has(input[type="radio"]:checked) {
+            border-color: var(--primary);
+            background: rgba(255, 91, 31, 0.1);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(255, 91, 31, 0.2);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .btn-cancel {
+            flex: 1;
+            padding: 12px 20px;
+            background: #E0E0E0;
+            color: #333;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cancel:hover {
+            background: #D0D0D0;
+        }
+
+        .btn-add-cart {
+            flex: 1;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, #FF5A1F 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-add-cart:hover {
+            box-shadow: 0 6px 20px rgba(255, 91, 31, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-add-cart:disabled {
+            background: #CCC;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         .close-btn {
             background: rgba(255, 255, 255, 0.2);
             color: white;
@@ -667,7 +969,7 @@
             color: white;
             padding: 14px 20px;
             border-radius: 8px;
-            z-index: 2000;
+            z-index: 9999;
             box-shadow: 0 4px 12px rgba(255, 68, 68, 0.4);
             border: 2px solid #CC0000;
             font-weight: 600;
@@ -779,7 +1081,7 @@
                 <div class="banner-content">
                     <p>🚚 Free Delivery for orders above ₹1499 across BURLA</p>
                     <p>⏰ Delivery time: 5 PM to 9 PM</p>
-                    <p>📞 WhatsApp: <a href="https://wa.me/917008911707" style="color: #FF5A1F; text-decoration: none; font-weight: 600;">+91 70089 11707</a></p>
+                    <p>📞 WhatsApp: <a href="https://wa.me/917205482422" style="color: #FF5A1F; text-decoration: none; font-weight: 600;">+91 70089 11707</a></p>
                 </div>
             </div>
             <div class="cart-badge" id="cartBadge" onclick="openCart()">
@@ -797,6 +1099,78 @@
             </div>
         </div>
 
+        <a href="https://wa.me/917205482422?text=Hi%20I%20want%20to%20add%20my%20own%20custom%20list%20of%20items" class="add-list-banner">
+            <span class="banner-icon">📝</span>
+            <span class="banner-text">ADD YOUR OWN LIST</span>
+            <span class="banner-arrow">→</span>
+        </a>
+
+        <button onclick="openMissingItemDialog()" class="add-list-banner" style="background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%); box-shadow: 0 6px 20px rgba(255, 107, 157, 0.3);">
+            <span class="banner-icon">➕</span>
+            <span class="banner-text">ADD A MISSING ITEM TO YOUR CART</span>
+            <span class="banner-arrow">→</span>
+        </button>
+
+        <!-- Missing Item Modal -->
+        <div class="missing-item-modal" id="missingItemModal">
+            <div class="missing-item-box">
+                <h2>Add a Missing Item</h2>
+                <div class="form-group">
+                    <label for="itemName">Item Name *</label>
+                    <input type="text" id="itemName" placeholder="e.g., Milk, Bread, Butter..." required>
+                </div>
+                <div class="form-group">
+                    <label for="itemBrand">Brand Name</label>
+                    <input type="text" id="itemBrand" placeholder="e.g., Amul, Mother Dairy...">
+                </div>
+                
+                <div class="quantity-type-selector">
+                    <label>Quantity Type *</label>
+                    <div class="toggle-switch-container">
+                        <label class="toggle-switch">
+                            <input type="radio" name="quantityType" value="quantity" onchange="toggleQuantityType('quantity')" checked>
+                            <span class="toggle-slider">
+                                <span class="toggle-label">Quantity</span>
+                            </span>
+                        </label>
+                        <label class="toggle-switch">
+                            <input type="radio" name="quantityType" value="weight" onchange="toggleQuantityType('weight')">
+                            <span class="toggle-slider">
+                                <span class="toggle-label">Weight</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="itemValue" id="itemValueLabel">Quantity (Minimum 1) *</label>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <input type="number" id="itemValue" placeholder="1, 2, 3..." min="1" step="1">
+                        <select id="itemUnit" required>
+                            <option value="">-- Select Unit --</option>
+                            <option value="piece" data-type="quantity">Pieces</option>
+                            <option value="packet" data-type="quantity">Packets</option>
+                            <option value="box" data-type="quantity">Boxes</option>
+                            <option value="dozen" data-type="quantity">Dozen</option>
+                            <option value="g" data-type="weight">Grams (g)</option>
+                            <option value="kg" data-type="weight">Kilograms (kg)</option>
+                            <option value="ml" data-type="weight">Millilitres (ml)</option>
+                            <option value="l" data-type="weight">Litres (l)</option>
+                        </select>
+                    </div>
+                    <span id="itemError" style="color: #FF4444; font-size: 12px; display: none; margin-top: 6px;"></span>
+                    <span id="weightHint" style="color: #666; font-size: 11px; display: none; margin-top: 6px;">
+                        💡 <strong>Grams (g), Millilitres (ml) & Kilograms (kg):</strong> Multiples of 50 only | <strong>Litres (l):</strong> Any positive number
+                    </span>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn-cancel" onclick="closeMissingItemDialog()">Cancel</button>
+                    <button class="btn-add-cart" onclick="addMissingItemToCart()">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
         <div class="category-filter" id="categoryFilter">
             <button class="category-btn active" data-category="all">All Items</button>
             <button class="category-btn" data-category="spices">🌶️ Spices</button>
@@ -805,6 +1179,7 @@
             <button class="category-btn" data-category="snacks">🍿 Snacks</button>
             <button class="category-btn" data-category="household">🏠 Household</button>
             <button class="category-btn" data-category="kitchenware">🍽️ Kitchenware</button>
+            <button class="category-btn" data-category="home-essentials">🏠 Home Essentials</button>
         </div>
 
         <div class="products-grid" id="productsGrid"></div>
@@ -1040,16 +1415,16 @@
             { id: 33, name: 'Gram Flour', category: 'grains', image: 'Gram_Flour__Besan_.jpg' },
             { id: 34, name: 'Masoor Dal', category: 'grains', image: 'Masoor_Dal.jpg' },
             { id: 35, name: 'Moong Dal', category: 'grains', image: 'Moong_Dal.jpg' },
-            { id: 36, name: 'Wheat Flour', category: 'grains', image: 'Wheat_Flour__Atta_.jpg' },
+            { id: 36, name: 'Wheat Flour', category: 'home-essentials', image: 'Wheat_Flour__Atta_.jpg' },
             { id: 37, name: 'Coconut Oil', category: 'oils', image: 'Coconut_Oil.jpg' },
             { id: 38, name: 'Mustard Oil', category: 'oils', image: 'Mustard_Oil.jpg' },
             { id: 39, name: 'Palm Oil', category: 'oils', image: 'Palm_Oil.jpg' },
             { id: 40, name: 'Refined Oil', category: 'oils', image: 'Refined_Oil.jpg' },
             { id: 41, name: 'Rice Bran Oil', category: 'oils', image: 'Rice_bran_oil.jpg' },
-            { id: 42, name: 'Rice Flour', category: 'grains', image: 'Rice_Flour__Arrarot_Powder_.jpg' },
-            { id: 43, name: 'Sago', category: 'grains', image: 'Sagoo.jpg' },
+            { id: 42, name: 'Rice Flour', category: 'home-essentials', image: 'Rice_Flour__Arrarot_Powder_.jpg' },
+            { id: 43, name: 'Sago', category: 'home-essentials', image: 'Sagoo.jpg' },
             { id: 44, name: 'Sesame Oil', category: 'oils', image: 'Sesame_Oil__Rasi_Tel_.jpg' },
-            { id: 45, name: 'Semolina', category: 'grains', image: 'Sooji.jpg' },
+            { id: 45, name: 'Sooji', category: 'home-essentials', image: 'Sooji.jpg' },
             { id: 46, name: 'Soybean Oil', category: 'oils', image: 'Soyabean_Oil.jpg' },
             { id: 47, name: 'Sunflower Oil', category: 'oils', image: 'Sunflower_Oil.jpg' },
             { id: 48, name: 'Almonds', category: 'snacks', image: 'Almonds.jpg' },
@@ -1091,17 +1466,17 @@
             { id: 80, name: 'Bowl', category: 'kitchenware', image: 'Bowl.jpg' },
             { id: 81, name: 'Spoon', category: 'kitchenware', image: 'Spoon.jpg' },
             // Beverages & Dry Items
-            { id: 82, name: 'Horlicks', category: 'snacks', image: 'Horlicks.jpg' },
-            { id: 83, name: 'Amul Powder', category: 'snacks', image: 'Amul_Powder.jpg' },
+            { id: 82, name: 'Horlicks', category: 'home-essentials', image: 'Horlicks.jpg' },
+            { id: 83, name: 'Amul Powder', category: 'home-essentials', image: 'Amul_Powder.jpg' },
             // Dry Items
             { id: 84, name: 'Tadka Dal', category: 'grains', image: 'Tadka_Dal.jpg' },
             { id: 85, name: 'Matar Chana', category: 'grains', image: 'Matar_Chana.jpg' },
-            { id: 86, name: 'Soya Chunks', category: 'grains', image: 'Soya_Chunks.jpg' },
-            { id: 87, name: 'Papad', category: 'snacks', image: 'Papad.jpg' },
-            { id: 88, name: 'Poha (Chewda)', category: 'grains', image: 'Poha_Chewda.jpg' },
-            { id: 89, name: 'Vermicelli', category: 'grains', image: 'Vermicelli.jpg' },
-            { id: 90, name: 'Chowmein', category: 'grains', image: 'Chowmein.jpg' },
-            { id: 91, name: 'Pasta', category: 'grains', image: 'Pasta.jpg' },
+            { id: 86, name: 'Soya Chunks', category: 'home-essentials', image: 'Soya_Chunks.jpg' },
+            { id: 87, name: 'Papad', category: 'home-essentials', image: 'Papad.jpg' },
+            { id: 88, name: 'Poha (Chewda)', category: 'home-essentials', image: 'Poha_Chewda.jpg' },
+            { id: 89, name: 'Semaiya', category: 'home-essentials', image: 'Vermicelli.jpg' },
+            { id: 90, name: 'Chowmein', category: 'home-essentials', image: 'Chowmein.jpg' },
+            { id: 91, name: 'Pasta', category: 'home-essentials', image: 'Pasta.jpg' },
             { id: 92, name: 'Biscuit', category: 'snacks', image: 'Biscuit.jpg' },
             { id: 93, name: 'Kheeri Rice', category: 'grains', image: 'Kheeri_Rice.jpg' },
             // Spices & Condiments
@@ -1111,9 +1486,9 @@
             { id: 97, name: 'Sandheiva Salt', category: 'spices', image: 'Sandheiva_Salt.jpg' },
             { id: 98, name: 'China Salt', category: 'spices', image: 'China_Salt.jpg' },
             { id: 99, name: 'Bio Soda', category: 'spices', image: 'Bio_Soda.jpg' },
-            { id: 100, name: 'Aachaar', category: 'spices', image: 'Aachaar.jpg' },
-            { id: 101, name: 'Sattu', category: 'grains', image: 'Sattu.jpg' },
-            { id: 102, name: 'Capoor', category: 'spices', image: 'Capoor.jpg' },
+            { id: 100, name: 'Aachaar', category: 'home-essentials', image: 'Aachaar.jpg' },
+            { id: 101, name: 'Sattu', category: 'home-essentials', image: 'Sattu.jpg' },
+            { id: 102, name: 'Capoor', category: 'home-essentials', image: 'Capoor.jpg' },
             { id: 103, name: 'Gota Mishri', category: 'snacks', image: 'Gota_Mishri.jpg' },
             { id: 104, name: 'Mishra Dana', category: 'snacks', image: 'Mishra_Dana.jpg' },
             { id: 105, name: 'Nakul Dana', category: 'snacks', image: 'Nakul_Dana.jpg' },
@@ -1125,7 +1500,7 @@
             { id: 109, name: 'Good Knight Liquid', category: 'household', image: 'Good_Knight_Liquid.jpg' },
             { id: 110, name: 'AA Battery', category: 'household', image: 'AA_Battery.jpg' },
             { id: 111, name: 'Matchbox', category: 'household', image: 'Matchbox.jpg' },
-            { id: 112, name: 'Rozana', category: 'household', image: 'Rozana.jpg' },
+            { id: 112, name: 'Rozana', category: 'home-essentials', image: 'Rozana.jpg' },
             { id: 113, name: 'Revive', category: 'household', image: 'Revive.jpg' },
             { id: 114, name: 'Rice', category: 'grains', image: 'Rice.jpg' }
         ];
@@ -1448,6 +1823,276 @@
             document.body.appendChild(errorToast);
             setTimeout(() => errorToast.remove(), 3000);
         }
+
+        // Missing Item Functions
+        function openMissingItemDialog() {
+            document.getElementById('missingItemModal').classList.add('open');
+            // Clear inputs
+            document.getElementById('itemName').value = '';
+            document.getElementById('itemBrand').value = '';
+            document.getElementById('itemValue').value = '';
+            document.getElementById('itemUnit').value = '';
+            document.getElementById('itemError').style.display = 'none';
+            document.querySelector('input[name="quantityType"][value="quantity"]').checked = true;
+            toggleQuantityType('quantity');
+            document.getElementById('itemName').focus();
+        }
+
+        function closeMissingItemDialog() {
+            document.getElementById('missingItemModal').classList.remove('open');
+        }
+
+        function toggleQuantityType(type) {
+            const valueLabel = document.getElementById('itemValueLabel');
+            const valueInput = document.getElementById('itemValue');
+            const unitSelect = document.getElementById('itemUnit');
+            const errorSpan = document.getElementById('itemError');
+            const weightHint = document.getElementById('weightHint');
+
+            // Clear previous values and errors
+            valueInput.value = '';
+            unitSelect.value = '';
+            errorSpan.style.display = 'none';
+            errorSpan.textContent = '';
+
+            if (type === 'quantity') {
+                valueLabel.textContent = 'Quantity (Minimum 1) *';
+                valueInput.min = '1';
+                valueInput.step = '1';
+                valueInput.placeholder = '1, 2, 3...';
+                weightHint.style.display = 'none';
+                
+                // Show only quantity units
+                const options = unitSelect.querySelectorAll('option');
+                options.forEach(option => {
+                    if (option.getAttribute('data-type') === 'quantity' || option.value === '') {
+                        option.style.display = 'block';
+                    } else {
+                        option.style.display = 'none';
+                    }
+                });
+            } else {
+                valueLabel.textContent = 'Weight (See rules below) *';
+                valueInput.min = '1';
+                valueInput.step = '1'; // Will be dynamic based on unit selection
+                valueInput.placeholder = 'Enter weight value...';
+                weightHint.style.display = 'block';
+                
+                // Show only weight units
+                const options = unitSelect.querySelectorAll('option');
+                options.forEach(option => {
+                    if (option.getAttribute('data-type') === 'weight' || option.value === '') {
+                        option.style.display = 'block';
+                    } else {
+                        option.style.display = 'none';
+                    }
+                });
+
+                // Add change listener to unit select for dynamic step adjustment
+                unitSelect.addEventListener('change', function() {
+                    if (this.value === 'ml' || this.value === 'g' || this.value === 'kg') {
+                        // ml, g, kg: multiples of 50
+                        valueInput.step = '50';
+                        valueInput.placeholder = '50, 100, 150...';
+                    } else if (this.value === 'l') {
+                        // l: any positive integer
+                        valueInput.step = '1';
+                        valueInput.placeholder = 'Any positive number...';
+                    }
+                    // Clear error when unit changes
+                    errorSpan.style.display = 'none';
+                });
+            }
+        }
+
+        function validateMissingItemValue() {
+            const type = document.querySelector('input[name="quantityType"]:checked').value;
+            const valueInput = document.getElementById('itemValue');
+            const unitSelect = document.getElementById('itemUnit');
+            const value = parseInt(valueInput.value);
+            const errorSpan = document.getElementById('itemError');
+            const selectedUnit = unitSelect.value;
+
+            // Check if empty
+            if (!valueInput.value) {
+                errorSpan.style.display = 'none';
+                return true;
+            }
+
+            // Check if it's a number
+            if (isNaN(value)) {
+                errorSpan.textContent = 'Please enter a valid number';
+                errorSpan.style.display = 'block';
+                return false;
+            }
+
+            if (type === 'quantity') {
+                // Check if less than 1
+                if (value < 1) {
+                    errorSpan.textContent = 'Quantity must be at least 1';
+                    errorSpan.style.display = 'block';
+                    return false;
+                }
+            } else {
+                // Weight validation
+                // Special case: ml requires multiples of 50, l allows any positive integer
+                if (selectedUnit === 'ml') {
+                    // Millilitres: multiples of 50
+                    if (value < 50) {
+                        errorSpan.textContent = 'Millilitres must be at least 50';
+                        errorSpan.style.display = 'block';
+                        return false;
+                    }
+
+                    if (value % 50 !== 0) {
+                        errorSpan.textContent = 'Millilitres must be multiples of 50 (50, 100, 150...)';
+                        errorSpan.style.display = 'block';
+                        return false;
+                    }
+                } else if (selectedUnit === 'l') {
+                    // Litres: any positive integer
+                    if (value < 1) {
+                        errorSpan.textContent = 'Litres must be at least 1';
+                        errorSpan.style.display = 'block';
+                        return false;
+                    }
+                } else {
+                    // Grams and kilograms: multiples of 50
+                    if (value < 50) {
+                        errorSpan.textContent = 'Weight must be at least 50';
+                        errorSpan.style.display = 'block';
+                        return false;
+                    }
+
+                    // Check if multiple of 50
+                    if (value % 50 !== 0) {
+                        errorSpan.textContent = 'Weight must be multiples of 50 (50, 100, 150...)';
+                        errorSpan.style.display = 'block';
+                        return false;
+                    }
+                }
+            }
+
+            errorSpan.style.display = 'none';
+            return true;
+        }
+
+        function addMissingItemToCart() {
+            const itemName = document.getElementById('itemName').value.trim();
+            const itemBrand = document.getElementById('itemBrand').value.trim();
+            const itemValue = document.getElementById('itemValue').value.trim();
+            const itemUnit = document.getElementById('itemUnit').value;
+            const quantityType = document.querySelector('input[name="quantityType"]:checked').value;
+
+            // Validation
+            if (!itemName) {
+                showErrorToast('❌ Please enter an item name');
+                return;
+            }
+
+            if (!itemValue) {
+                showErrorToast(`❌ Please enter a ${quantityType}`);
+                return;
+            }
+
+            if (!validateMissingItemValue()) {
+                return;
+            }
+
+            if (!itemUnit) {
+                showErrorToast('❌ Please select a unit');
+                return;
+            }
+
+            // Create custom item object
+            const valueDisplay = itemValue + ' ' + itemUnit;
+            const customItem = {
+                id: Date.now(), // Unique ID based on timestamp
+                name: itemName,
+                brand: itemBrand,
+                quantity: 1,
+                weightDisplay: valueDisplay,
+                weight: itemValue + itemUnit,
+                category: 'custom',
+                image: 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect fill=%22%23FF6B9D%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%22 y=%2250%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22%3E✨%3C/text%3E%3C/svg%3E'
+            };
+
+            // Add to cart
+            cart.push(customItem);
+
+            // Close dialog
+            closeMissingItemDialog();
+
+            // Show success and update UI
+            showSuccessToast('✅ Item added to cart!');
+            updateCartUI();
+            openCart();
+        }
+
+        function showSuccessToast(message) {
+            const successToast = document.createElement('div');
+            successToast.className = 'toast-success';
+            successToast.textContent = message;
+            successToast.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #4CAF50;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 10000;
+                font-weight: 600;
+                animation: slideDown 0.3s ease;
+            `;
+            document.body.appendChild(successToast);
+            setTimeout(() => successToast.remove(), 3000);
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('DOMContentLoaded', function() {
+            const missingItemModal = document.getElementById('missingItemModal');
+            if (missingItemModal) {
+                missingItemModal.addEventListener('click', (e) => {
+                    if (e.target.id === 'missingItemModal') {
+                        closeMissingItemDialog();
+                    }
+                });
+            }
+
+            // Allow Enter key to submit form (on unit field)
+            const itemUnitSelect = document.getElementById('itemUnit');
+            if (itemUnitSelect) {
+                itemUnitSelect.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        addMissingItemToCart();
+                    }
+                });
+            }
+
+            // Validate value on input
+            const valueInput = document.getElementById('itemValue');
+            if (valueInput) {
+                valueInput.addEventListener('input', validateMissingItemValue);
+                valueInput.addEventListener('change', validateMissingItemValue);
+                valueInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        addMissingItemToCart();
+                    }
+                });
+            }
+
+            // Allow numeric input only for value
+            if (valueInput) {
+                valueInput.addEventListener('keypress', (e) => {
+                    if (!/[0-9]/.test(e.key)) {
+                        e.preventDefault();
+                    }
+                });
+            }
+        });
 
         window.addEventListener('load', init);
     </script>
